@@ -20,9 +20,9 @@ public class IOMngr {
 
         try (BufferedReader br = new BufferedReader(new FileReader(nombreArchivo))) {
             String linea;
+            int i= 1;
             while ((linea = br.readLine()) != null) {
                 String[] datos = linea.split(",");
-
                 String nombre = datos[0];
                 String apellido = datos[1];
                 Etnia etnia = Etnia.AFRO.getEtniabyName(datos[2]);

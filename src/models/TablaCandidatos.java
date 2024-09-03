@@ -20,8 +20,11 @@ public class TablaCandidatos {
             @Override
             public int compare(Candidato c1, Candidato c2) {
                 for (CriterioOrdenacion criterio : criterios) {
-                    //int resultado = criterio.comparar(c1, c2);
-                    int resultado = 0;
+                    int resultado;
+                    resultado = criterio.comparar(c1, c2);
+                    if (criterio instanceof CriterioEtnia) {
+                        resultado*=10;
+                    }
                     if (resultado != 0) {
                         return resultado;
                     }
@@ -32,11 +35,4 @@ public class TablaCandidatos {
         return candidatos;
     }
 
-    // Método para mostrar la tabla de candidatos ordenados
-    public void mostrarTabla(List<Candidato> listaOrdenada) {
-        System.out.println("Tabla de Candidatos Ordenada:");
-        for (Candidato candidato : listaOrdenada) {
-            System.out.println(candidato);
-        }
-    }
 }
