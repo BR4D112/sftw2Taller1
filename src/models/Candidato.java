@@ -93,4 +93,8 @@ public class Candidato {
                 ", fechaInscripcion=" + fechaInscripcion +
                 '}';
     }
+
+    public String toString2() {
+       return ( nombre + ' ' + apellido);
+    }
 }
